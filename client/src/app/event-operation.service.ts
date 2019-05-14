@@ -9,11 +9,8 @@ export class EventOperationService {
   baseUrl = environment.baseUrl;
   constructor(private http: HttpClient) { }
 
-  async getEventList(options, callback) {
-    let eventUrl = this.baseUrl + '/events/' + options.eventId;
-    if ((options !== undefined || options !== null) && typeof options === 'string') {
-      eventUrl = eventUrl + '?' + options;
-    }
+  async getEventList(callback) {
+    const eventUrl = this.baseUrl + '/events';
     this.http.get(eventUrl)
     .subscribe(response => {
       callback(null, response);

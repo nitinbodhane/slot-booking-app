@@ -41,13 +41,14 @@ async function getEvent (options, callback) {
     if (eventId !== undefined) {
       var result = await model.Event.findById(eventId);
     } else {
-      result = await model.Event.find();
+      result = await model.Event.find({}, {_id: 0, __v: 0, backgroundColor: 0});
     }
     let response = {
       data: result
     };
     callback(null, response);
   } catch (err) {
+    console.log(err.stack);
     let resErr = {
       message: err.message
     }
@@ -97,7 +98,7 @@ async function deleteEvent (options, callback) {
     try {
       let eventId = options.eventId;
       let fieldTypeRestriction = {
-        int: ['eventId']
+        int: []
       };
       await validate.checkFieldRestriction(options, fieldTypeRestriction);
       let result = await model.Event.deleteOne({_id: eventId});

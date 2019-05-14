@@ -23,22 +23,23 @@ export class HomeComponent implements OnInit {
   calendarVisible = true;
   calendarPlugins = [dayGridPlugin, timeGrigPlugin, interactionPlugin];
   calendarWeekends = true;
+  renderEvent;
   calendarEvents: EventInput[] = [
-    { title: 'Event Now', start: new Date() },
-    {
-      start: '2019-05-14T10:00:00',
-      end: '2019-05-16T16:00:00',
-      rendering: 'background',
-      backgroundColor: 'red',
-      title: 'Nitin'
-    },
-    {
-      start: '2019-05-18T10:00:00',
-      end: '2019-05-19T16:00:00',
-      rendering: 'background',
-      backgroundColor: 'yellow',
-    }
+    { title: 'Event Now', start: new Date() }
   ];
+  // {
+  //   start: '2019-05-14T10:00:00',
+  //   end: '2019-05-16T16:00:00',
+  //   rendering: 'background',
+  //   backgroundColor: 'red',
+  //   title: 'Nitin'
+  // },
+  // {
+  //   start: '2019-05-18T10:00:00',
+  //   end: '2019-05-19T16:00:00',
+  //   rendering: 'background',
+  //   backgroundColor: 'yellow',
+  // }
   // var calendar = new Calendar(calendarEl, {
   //   defaultDate: '2014-11-10',
   //   defaultView: 'timeGridWeek',
@@ -52,6 +53,17 @@ export class HomeComponent implements OnInit {
   // });
 
   ngOnInit() {
+    console.log('ngOnInit');
+    this.eventService.getEventList(async (err, response) => {
+      if (err) {
+        console.log(err);
+      }
+      response.data.map(x => {
+        this.calendarEvents.push(x);
+      });
+    });
+    // this.calendarEvents.push({start: '2019-05-18T10:00:00', title: 'jhbhnjkm'})
+    console.log(this.calendarEvents);
   }
 
   toggleVisible() {
@@ -73,7 +85,6 @@ export class HomeComponent implements OnInit {
       if (confirm('Would you like to add an event to ' + arg.dateStr + ' ?')) {
         const currObj = {
           start: arg.date,
-          rendering: 'background',
           backgroundColor: 'green',
           title: eventName
         };

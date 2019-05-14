@@ -35,4 +35,18 @@ router.post('/', function (req, res, next) {
   });
 });
 
+router.delete('/:eventId', function (req, res, next) {
+  let options = {
+    eventId: req.params.eventId
+};
+
+  events.deleteEvent(options, async (err, data) => {
+    if (err) {
+      return res.send(err);
+    } else {
+      return res.status(200).send(data);
+    }
+  });
+});
+
 module.exports = router;
