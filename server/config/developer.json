@@ -1,0 +1,7 @@
+{
+  "BASE_URL": "http://localhost:3000",
+  "JWT": {
+    "privateKey": "ssh/jwtRS256.key",
+    "publicKey": "ssh/jwtRS256.key.pub"
+  }
+}

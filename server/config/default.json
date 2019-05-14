@@ -1,0 +1,10 @@
+{
+    "BASE_URL": "http://localhost:3000",
+    "RESTRICT_FIELDS": [],
+    "SALTROUNDS": 10,
+    "EXPIRATION_TIME": 86400,
+    "JWT": {
+        "privateKey": "ssh/jwtRS256.key",
+        "publicKey": "ssh/jwtRS256.key.pub"
+    }
+}

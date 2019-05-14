@@ -1,0 +1,36 @@
+<div class="login-page">
+  <div class="row justify-content-md-center">
+      <div class="col-md-4">
+          <!-- <img class="user-avatar" src="assets/images/logo.png" width="150px" /> -->
+          <h1>White Hat</h1>
+              <div class="form-content">
+                  <div class="form-group">
+                      <input type="text" class="form-control input-underline input-lg" [(ngModel)] = "register.first_name" placeholder="First Name">
+                      <input type="text" class="form-control input-underline input-lg" [(ngModel)] = "register.last_name" placeholder="Last Name">
+                  </div>
+
+                  <div class="form-group">
+                      <input type="text" class="form-control input-underline input-lg" [(ngModel)] = "register.user_name" placeholder="User Name" required>
+                  </div>
+
+                  <div class="form-group">
+                      <input type="password" class="form-control input-underline input-lg" [(ngModel)] = "register.password" placeholder="Password" required>
+                      <input type="password" class="form-control input-underline input-lg" [(ngModel)] = "register.conf_password" placeholder="Confirm Password" required>
+                  </div>
+                  <div class="form-group">
+                      <input type="email" class="form-control input-underline input-lg" [(ngModel)] = "register.email" placeholder="Email">
+                  </div>
+                  <div class="form-group">
+                      <input type="number" class="form-control input-underline input-lg" [(ngModel)] = "register.phone" placeholder="Phone">
+                  </div>
+                  <div class="form-group">
+                    <input type="radio" value="Teacher" name="Teacher" [(ngModel)] = "register.user_type"> Teacher
+                    <input type="radio" value="Student" name="Student" [(ngModel)] = "register.user_type"> Student
+                  </div>
+              </div>
+              <button type="button" class="btn btn-success" (click) = "doRegister()">Register</button>&nbsp;
+              <button type="button" class="btn btn-link" [routerLink]="['/login']">Sign in</button>
+      </div>
+  </div>
+</div>
+
