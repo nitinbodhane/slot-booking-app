@@ -1,7 +1,32 @@
-<div class="login-page">
+
+<div class="container">
+    <h1 class="form-heading">login Form</h1>
+    <div class="login-form">
+        <div class="main-div">
+            <div >
+                <h2>WhiteHat Login</h2>
+                <p></p>
+            </div>
+            <div id="Login">
+                <div class="form-group">
+                    <input type="text" [(ngModel)]="user.user_name" class="form-control" id="inputUsername" placeholder="Username">
+                </div>
+                <div class="form-group">
+                    <input type="password" [(ngModel)]="user.password" class="form-control" id="inputPassword" placeholder="Password">
+                </div>
+                <div class="forgot">
+                    <a [routerLink]="['/register']">Already a member? Sign in</a>
+                </div>
+                <button type="button" (click) ="doLogin()" class="btn btn-primary">Login</button>
+            </div>
+        </div>
+        <p class="botto-text">xDesigned by Nitin Bodhane</p>
+    </div>
+</div>
+<!-- <div class="login-page">
         <div class="row justify-content-md-center">
             <div class="col-md-4">
-                <!-- <img class="user-avatar" src="assets/images/logo.png" width="150px" /> -->
+                <img class="user-avatar" src="assets/images/logo.png" width="150px" />
                 <h1>White Hat</h1>
                 <div class="form-content">
                     <div class="form-group">
@@ -25,4 +50,4 @@
                 </div>
             </div>
         </div>
-      </div>
+      </div> -->

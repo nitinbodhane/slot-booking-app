@@ -18,6 +18,7 @@ router.get('/:eventId?', function(req, res, next) {
 });
 
 router.post('/', function (req, res, next) {
+  console.log('From post of event => ', req.body);
   let options = {
     start: req.body.start,
     rendering: req.body.rendering,
