@@ -1,22 +1,32 @@
 <div class="login-page">
   <div class="row justify-content-md-center">
       <div class="col-md-4">
-          <!-- <img class="user-avatar" src="assets/images/logo.png" width="150px" /> -->
-          <h1>White Hat</h1>
+          <h1>White Hat Registration</h1>
+          &nbsp;
               <div class="form-content">
-                  <div class="form-group">
-                      <input type="text" class="form-control input-underline input-lg" [(ngModel)] = "register.first_name" placeholder="First Name">
-                      <input type="text" class="form-control input-underline input-lg" [(ngModel)] = "register.last_name" placeholder="Last Name">
-                  </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control input-underline input-lg" [(ngModel)] = "register.first_name" placeholder="First Name">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control input-underline input-lg" [(ngModel)] = "register.last_name" placeholder="Last Name">
+                        </div>
+                    </div>
+                </div>
 
                   <div class="form-group">
                       <input type="text" class="form-control input-underline input-lg" [(ngModel)] = "register.user_name" placeholder="User Name" required>
                   </div>
 
-                  <div class="form-group">
-                      <input type="password" class="form-control input-underline input-lg" [(ngModel)] = "register.password" placeholder="Password" required>
-                      <input type="password" class="form-control input-underline input-lg" [(ngModel)] = "register.conf_password" placeholder="Confirm Password" required>
-                  </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control input-underline input-lg" [(ngModel)] = "register.password" placeholder="Password" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control input-underline input-lg" [(ngModel)] = "register.conf_password" placeholder="Confirm Password" required>
+                    </div>
                   <div class="form-group">
                       <input type="email" class="form-control input-underline input-lg" [(ngModel)] = "register.email" placeholder="Email">
                   </div>
@@ -25,11 +35,22 @@
                   </div>
                   <div class="form-group">
                     <input type="radio" value="Teacher" name="Teacher" [(ngModel)] = "register.user_type"> Teacher
+                    &nbsp;
                     <input type="radio" value="Student" name="Student" [(ngModel)] = "register.user_type"> Student
                   </div>
               </div>
-              <button type="button" class="btn btn-primary" (click) = "doRegister()">Register</button>&nbsp;
-              <button type="button" class="btn btn-link" [routerLink]="['/login']">Sign in</button>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <button type="button" class="btn btn-primary" (click) = "doRegister()">Register</button>&nbsp;
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <button type="button" class="btn btn-light" [routerLink]="['/login']">Sign in</button>
+                        </div>
+                    </div>
+                </div>
       </div>
   </div>
 </div>

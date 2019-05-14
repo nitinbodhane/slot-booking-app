@@ -19,7 +19,6 @@ async function addUser (options, callback) {
     // Getting input fields
     let fields = serviceHelper.filterFields(model.UserMaster.schema.obj);
     let fieldTypeRestriction = {
-      int: ['phone'],
       password: ['password'],
       equal: ['password:conf_password'],
       email: ['email']
